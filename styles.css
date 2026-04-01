@@ -136,22 +136,15 @@ a:hover {
 
 .step {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  margin-bottom: 18px;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 12px;
 }
 
 .step-number {
-  background: #e91e8c;
-  color: #fff;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #e91e8c;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   flex-shrink: 0;
 }
 
