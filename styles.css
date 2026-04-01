@@ -135,21 +135,14 @@ a:hover {
 .badge.coins  { background: #f57c00; color: #fff; }
 
 .step {
-  display: flex;
-  gap: 8px;
-  align-items: baseline;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
 }
 
 .step-number {
   color: #e91e8c;
   font-weight: 700;
-  font-size: 15px;
-  flex-shrink: 0;
-}
-
-.step-content p {
-  margin: 0;
 }
 
 .contact-box {
