@@ -180,3 +180,48 @@ footer {
     font-size: 22px;
   }
 }
+/* Rangos */
+.ranges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.range-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.range-item img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.range-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.range-name {
+  font-weight: 700;
+  font-size: 13px;
+  color: #1a1a1a;
+}
+
+.range-exp {
+  font-size: 11px;
+  color: #999;
+}
+
+@media (max-width: 600px) {
+  .ranges-grid {
+    grid-template-columns: 1fr;
+  }
+}
