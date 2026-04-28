@@ -118,6 +118,12 @@ a:hover {
 
 .card.warning {
   border-left-color: #f57c00;
+  background: #fff8f0;
+}
+
+.card.warning h3 {
+  color: #f57c00;
+  margin-top: 0;
 }
 
 .badge {
@@ -164,6 +170,24 @@ a:hover {
   font-weight: 600;
 }
 
+/* Botón email en delete-account */
+.email-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #e91e8c;
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  transition: background 0.2s;
+}
+
+.email-btn:hover {
+  background: #c2177a;
+}
+
 footer {
   text-align: center;
   padding: 24px;
@@ -180,6 +204,7 @@ footer {
     font-size: 22px;
   }
 }
+
 /* Rangos */
 .ranges-grid {
   display: grid;
@@ -224,4 +249,91 @@ footer {
   .ranges-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Formulario delete-account */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #e91e8c;
+  background: #fff;
+}
+
+#btn-delete {
+  width: 100%;
+  padding: 13px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+#btn-delete:hover:not(:disabled) {
+  background: #a93226;
+}
+
+#btn-delete:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-msg {
+  background: #fdecea;
+  color: #c0392b;
+  border-left: 4px solid #c0392b;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.success-card {
+  border-left-color: #27ae60;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.success-card h2 {
+  color: #27ae60;
+  margin-top: 12px;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  background: #27ae60;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 56px;
+  margin: 0 auto 8px;
 }

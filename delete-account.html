@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar cuenta — Verdad o Reto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo-text">VERDAD O RETO</div>
+    <div class="logo-sub" id="header-sub"></div>
+  </div>
+</header>
+
+<div class="container">
+  <div id="content-info"></div>
+
+  <!-- FORMULARIO -->
+  <div id="form-section">
+    <div class="card warning" id="warning-card"></div>
+
+    <div class="card">
+      <div class="form-group">
+        <label id="label-email"></label>
+        <input type="email" id="input-email" autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label id="label-password"></label>
+        <input type="password" id="input-password" autocomplete="current-password" />
+      </div>
+      <div id="error-msg" class="error-msg" style="display:none;"></div>
+      <button id="btn-delete" onclick="handleDelete()"></button>
+    </div>
+  </div>
+
+  <!-- ÉXITO -->
+  <div id="success-section" style="display:none;">
+    <div class="card success-card">
+      <div class="success-icon">✓</div>
+      <h2 id="success-title"></h2>
+      <p id="success-body"></p>
+    </div>
+  </div>
+</div>
+
+<footer id="footer-text"></footer>
+
+<script>
+const API = 'https://truthordare-production.up.railway.app';
+
+const t = {
+  es: {
+    headerSub: 'Eliminar cuenta',
+    footer: '© 2026 Verdad o Reto · Jonatan Ortega González · España',
+    infoTitle: 'Eliminar tu cuenta',
+    infoSubtitle: 'Esta acción es permanente e irreversible',
+    infoIntro: 'Introduce tus credenciales para confirmar la eliminación de tu cuenta y todos tus datos de <strong>Verdad o Reto</strong>.',
+    warningTitle: '⚠️ Atención',
+    warningBody: 'Se eliminarán de forma permanente tu perfil, publicaciones, historial de retos, coins y todos los datos asociados. <strong>Esta acción no se puede deshacer.</strong>',
+    labelEmail: 'Correo electrónico',
+    labelPassword: 'Contraseña',
+    btnDelete: 'Eliminar mi cuenta',
+    btnLoading: 'Eliminando...',
+    successTitle: 'Cuenta eliminada',
+    successBody: 'Tu cuenta y todos tus datos han sido eliminados correctamente. Sentimos verte partir.',
+    errCredentials: 'Correo o contraseña incorrectos.',
+    errServer: 'Error del servidor. Inténtalo de nuevo más tarde.',
+    errEmpty: 'Por favor, introduce tu correo y contraseña.'
+  },
+  en: {
+    headerSub: 'Delete Account',
+    footer: '© 2026 Verdad o Reto · Jonatan Ortega González · Spain',
+    infoTitle: 'Delete your account',
+    infoSubtitle: 'This action is permanent and irreversible',
+    infoIntro: 'Enter your credentials to confirm the deletion of your account and all your data from <strong>Verdad o Reto</strong>.',
+    warningTitle: '⚠️ Warning',
+    warningBody: 'Your profile, posts, challenge history, coins and all associated data will be permanently deleted. <strong>This action cannot be undone.</strong>',
+    labelEmail: 'Email address',
+    labelPassword: 'Password',
+    btnDelete: 'Delete my account',
+    btnLoading: 'Deleting...',
+    successTitle: 'Account deleted',
+    successBody: 'Your account and all your data have been successfully deleted. Sorry to see you go.',
+    errCredentials: 'Incorrect email or password.',
+    errServer: 'Server error. Please try again later.',
+    errEmpty: 'Please enter your email and password.'
+  },
+  de: {
+    headerSub: 'Konto löschen',
+    footer: '© 2026 Verdad o Reto · Jonatan Ortega González · Spanien',
+    infoTitle: 'Dein Konto löschen',
+    infoSubtitle: 'Diese Aktion ist dauerhaft und kann nicht rückgängig gemacht werden',
+    infoIntro: 'Gib deine Anmeldedaten ein, um die Löschung deines Kontos und aller Daten bei <strong>Verdad o Reto</strong> zu bestätigen.',
+    warningTitle: '⚠️ Achtung',
+    warningBody: 'Dein Profil, Beiträge, Challenge-Verlauf, Coins und alle zugehörigen Daten werden dauerhaft gelöscht. <strong>Diese Aktion kann nicht rückgängig gemacht werden.</strong>',
+    labelEmail: 'E-Mail-Adresse',
+    labelPassword: 'Passwort',
+    btnDelete: 'Mein Konto löschen',
+    btnLoading: 'Wird gelöscht...',
+    successTitle: 'Konto gelöscht',
+    successBody: 'Dein Konto und alle deine Daten wurden erfolgreich gelöscht. Schade, dass du gehst.',
+    errCredentials: 'Falsche E-Mail oder falsches Passwort.',
+    errServer: 'Serverfehler. Bitte versuche es später erneut.',
+    errEmpty: 'Bitte gib deine E-Mail und dein Passwort ein.'
+  },
+  zh: {
+    headerSub: '删除账户',
+    footer: '© 2026 Verdad o Reto · Jonatan Ortega González · 西班牙',
+    infoTitle: '删除你的账户',
+    infoSubtitle: '此操作是永久性且不可撤销的',
+    infoIntro: '输入你的凭据以确认删除 <strong>Verdad o Reto</strong> 的账户及所有数据。',
+    warningTitle: '⚠️ 注意',
+    warningBody: '你的个人资料、帖子、挑战记录、金币及所有相关数据将被永久删除。<strong>此操作无法撤销。</strong>',
+    labelEmail: '电子邮件',
+    labelPassword: '密码',
+    btnDelete: '删除我的账户',
+    btnLoading: '正在删除...',
+    successTitle: '账户已删除',
+    successBody: '你的账户及所有数据已成功删除。很遗憾看到你离开。',
+    errCredentials: '邮箱或密码不正确。',
+    errServer: '服务器错误，请稍后再试。',
+    errEmpty: '请输入你的邮箱和密码。'
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const lang = ['es','en','de','zh'].includes(params.get('lang')) ? params.get('lang') : 'es';
+const tr = t[lang];
+
+document.getElementById('header-sub').textContent = tr.headerSub;
+document.title = tr.headerSub + ' — Verdad o Reto';
+document.getElementById('footer-text').textContent = tr.footer;
+
+document.getElementById('content-info').innerHTML = `
+  <h1>${tr.infoTitle}</h1>
+  <span class="subtitle">${tr.infoSubtitle}</span>
+  <p style="margin-top:16px;">${tr.infoIntro}</p>
+`;
+
+document.getElementById('warning-card').innerHTML = `
+  <h3>${tr.warningTitle}</h3>
+  <p>${tr.warningBody}</p>
+`;
+
+document.getElementById('label-email').textContent = tr.labelEmail;
+document.getElementById('label-password').textContent = tr.labelPassword;
+document.getElementById('btn-delete').textContent = tr.btnDelete;
+document.getElementById('success-title').textContent = tr.successTitle;
+document.getElementById('success-body').textContent = tr.successBody;
+
+async function handleDelete() {
+  const email = document.getElementById('input-email').value.trim();
+  const password = document.getElementById('input-password').value;
+  const btn = document.getElementById('btn-delete');
+  const errorDiv = document.getElementById('error-msg');
+
+  errorDiv.style.display = 'none';
+
+  if (!email || !password) {
+    errorDiv.textContent = tr.errEmpty;
+    errorDiv.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = tr.btnLoading;
+
+  try {
+    // 1. Login para obtener token
+    const loginRes = await fetch(`${API}/api/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    if (loginRes.status === 401 || loginRes.status === 403) {
+      errorDiv.textContent = tr.errCredentials;
+      errorDiv.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = tr.btnDelete;
+      return;
+    }
+
+    if (!loginRes.ok) {
+      errorDiv.textContent = tr.errServer;
+      errorDiv.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = tr.btnDelete;
+      return;
+    }
+
+    const loginData = await loginRes.json();
+    const token = loginData.token || loginData.accessToken || loginData.jwt;
+
+    // 2. Eliminar cuenta
+    const deleteRes = await fetch(`${API}/api/users/me`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!deleteRes.ok) {
+      errorDiv.textContent = tr.errServer;
+      errorDiv.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = tr.btnDelete;
+      return;
+    }
+
+    // 3. Mostrar éxito
+    document.getElementById('form-section').style.display = 'none';
+    document.getElementById('content-info').style.display = 'none';
+    document.getElementById('success-section').style.display = 'block';
+
+  } catch (e) {
+    errorDiv.textContent = tr.errServer;
+    errorDiv.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = tr.btnDelete;
+  }
+}
+</script>
+</body>
+</html>
