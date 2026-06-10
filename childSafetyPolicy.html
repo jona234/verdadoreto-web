@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Seguridad Infantil — Verdad o Reto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo-text">VERDAD O RETO</div>
+    <div class="logo-sub" id="header-sub"></div>
+  </div>
+</header>
+<div class="container" id="content"></div>
+<footer id="footer-text"></footer>
+<script>
+const translations = {
+  "es": {
+    "headerSub": "Política de Seguridad Infantil",
+    "title": "Política de Seguridad Infantil",
+    "subtitle": "Dev-licius · Verdad o Reto",
+    "intro": "En <strong>Verdad o Reto</strong>, desarrollada por <strong>Dev-licius</strong>, la seguridad de los menores es una prioridad absoluta. Esta política describe nuestro compromiso con la protección infantil y las medidas que aplicamos para prevenir cualquier forma de abuso o explotación.",
+    "footer": "© 2026 Verdad o Reto · Jonatan Ortega González · España",
+    "contactText": "Para cualquier asunto relacionado con la seguridad infantil, contacta directamente con nuestro equipo:",
+    "sections": [
+      {
+        "title": "1. Prohibición expresa de CSAE",
+        "cards": [
+          {
+            "type": "warning",
+            "heading": "Prohibición total de abuso y explotación sexual infantil",
+            "body": "<strong>Verdad o Reto</strong> prohíbe de forma absoluta cualquier contenido que constituya abuso o explotación sexual infantil (CSAE, por sus siglas en inglés). Esto incluye, sin limitación:",
+            "list": [
+              "Material de abuso sexual infantil (CSAM) en cualquier formato.",
+              "Contenido que sexualice a menores de edad.",
+              "Comunicaciones o comportamientos de grooming dirigidos a menores.",
+              "Cualquier intento de contacto inapropiado con menores a través de la plataforma.",
+              "Difusión, distribución o solicitud de material que explote sexualmente a menores."
+            ],
+            "bodyAfter": "Cualquier usuario que infrinja esta política será bloqueado permanentemente y su caso será reportado a las autoridades competentes."
+          }
+        ]
+      },
+      {
+        "title": "2. Mecanismos de protección en la app",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "Sistema de reporte de contenido",
+            "body": "Todos los usuarios pueden reportar cualquier publicación o contenido inapropiado pulsando el icono 🚩. Los motivos de reporte incluyen expresamente <strong>contenido sexual</strong>. Todos los reportes son revisados por nuestro equipo de moderación."
+          },
+          {
+            "type": "info",
+            "heading": "Bloqueo de usuarios",
+            "body": "Cualquier usuario puede bloquear a otro en cualquier momento desde su perfil. El bloqueo impide toda interacción entre las partes y elimina la visibilidad mutua en la plataforma."
+          },
+          {
+            "type": "info",
+            "heading": "Moderación de contenido",
+            "body": "Contamos con un equipo de moderación que revisa los reportes recibidos y toma medidas inmediatas ante cualquier contenido que viole esta política, incluyendo la eliminación del contenido y la suspensión o bloqueo permanente de la cuenta infractora."
+          }
+        ]
+      },
+      {
+        "title": "3. Cumplimiento legal",
+        "cards": [
+          {
+            "type": "",
+            "heading": "Legislación aplicable",
+            "body": "Dev-licius cumple con toda la legislación aplicable en materia de protección de menores, incluyendo la normativa española y europea, así como con las políticas de las plataformas de distribución (Google Play y App Store). Cooperamos plenamente con las autoridades competentes ante cualquier caso de CSAE detectado."
+          },
+          {
+            "type": "",
+            "heading": "Notificación a autoridades",
+            "body": "En caso de detectar cualquier material de abuso sexual infantil (CSAM), Dev-licius lo notificará de inmediato a las autoridades pertinentes y tomará todas las medidas necesarias para eliminar dicho contenido de la plataforma."
+          }
+        ]
+      },
+      {
+        "title": "4. Punto de contacto de seguridad infantil",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "Contacto dedicado a seguridad infantil",
+            "body": "Para reportar cualquier contenido relacionado con abuso o explotación sexual infantil, o para consultas sobre nuestras prácticas de seguridad, puedes contactar directamente con nuestro equipo. Nos comprometemos a responder con la máxima urgencia y a tomar las medidas oportunas."
+          }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "headerSub": "Child Safety Policy",
+    "title": "Child Safety Policy",
+    "subtitle": "Dev-licius · Verdad o Reto",
+    "intro": "At <strong>Verdad o Reto</strong>, developed by <strong>Dev-licius</strong>, the safety of minors is an absolute priority. This policy outlines our commitment to child protection and the measures we apply to prevent any form of abuse or exploitation.",
+    "footer": "© 2026 Verdad o Reto · Jonatan Ortega González · Spain",
+    "contactText": "For any matter related to child safety, please contact our team directly:",
+    "sections": [
+      {
+        "title": "1. Explicit Prohibition of CSAE",
+        "cards": [
+          {
+            "type": "warning",
+            "heading": "Total prohibition of child sexual abuse and exploitation",
+            "body": "<strong>Verdad o Reto</strong> absolutely prohibits any content that constitutes child sexual abuse and exploitation (CSAE). This includes, without limitation:",
+            "list": [
+              "Child sexual abuse material (CSAM) in any format.",
+              "Content that sexualizes minors.",
+              "Grooming communications or behaviors directed at minors.",
+              "Any attempt at inappropriate contact with minors through the platform.",
+              "Dissemination, distribution, or solicitation of material that sexually exploits minors."
+            ],
+            "bodyAfter": "Any user who violates this policy will be permanently blocked and their case will be reported to the relevant authorities."
+          }
+        ]
+      },
+      {
+        "title": "2. In-App Protection Mechanisms",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "Content reporting system",
+            "body": "All users can report any inappropriate post or content by tapping the 🚩 icon. Report reasons explicitly include <strong>sexual content</strong>. All reports are reviewed by our moderation team."
+          },
+          {
+            "type": "info",
+            "heading": "User blocking",
+            "body": "Any user can block another at any time from their profile. Blocking prevents all interaction between the parties and removes mutual visibility on the platform."
+          },
+          {
+            "type": "info",
+            "heading": "Content moderation",
+            "body": "We have a moderation team that reviews received reports and takes immediate action on any content that violates this policy, including content removal and suspension or permanent banning of the offending account."
+          }
+        ]
+      },
+      {
+        "title": "3. Legal Compliance",
+        "cards": [
+          {
+            "type": "",
+            "heading": "Applicable legislation",
+            "body": "Dev-licius complies with all applicable legislation regarding the protection of minors, including Spanish and European regulations, as well as the policies of distribution platforms (Google Play and App Store). We fully cooperate with the relevant authorities in any detected CSAE case."
+          },
+          {
+            "type": "",
+            "heading": "Reporting to authorities",
+            "body": "If any child sexual abuse material (CSAM) is detected, Dev-licius will immediately notify the relevant authorities and take all necessary measures to remove such content from the platform."
+          }
+        ]
+      },
+      {
+        "title": "4. Child Safety Point of Contact",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "Dedicated child safety contact",
+            "body": "To report any content related to child sexual abuse or exploitation, or for inquiries about our safety practices, you can contact our team directly. We are committed to responding with the utmost urgency and taking appropriate action."
+          }
+        ]
+      }
+    ]
+  },
+  "de": {
+    "headerSub": "Kindersicherheitsrichtlinie",
+    "title": "Kindersicherheitsrichtlinie",
+    "subtitle": "Dev-licius · Verdad o Reto",
+    "intro": "Bei <strong>Verdad o Reto</strong>, entwickelt von <strong>Dev-licius</strong>, hat der Schutz von Minderjährigen höchste Priorität. Diese Richtlinie beschreibt unser Engagement für den Kinderschutz und die Maßnahmen, die wir ergreifen, um jede Form von Missbrauch oder Ausbeutung zu verhindern.",
+    "footer": "© 2026 Verdad o Reto · Jonatan Ortega González · Spanien",
+    "contactText": "Für alle Angelegenheiten im Zusammenhang mit der Kindersicherheit wende dich direkt an unser Team:",
+    "sections": [
+      {
+        "title": "1. Ausdrückliches Verbot von CSAE",
+        "cards": [
+          {
+            "type": "warning",
+            "heading": "Absolutes Verbot von sexuellem Missbrauch und Ausbeutung von Kindern",
+            "body": "<strong>Verdad o Reto</strong> verbietet absolut alle Inhalte, die sexuellen Missbrauch oder Ausbeutung von Kindern (CSAE) darstellen. Dies umfasst unter anderem:",
+            "list": [
+              "Material über sexuellen Kindesmissbrauch (CSAM) in jeglichem Format.",
+              "Inhalte, die Minderjährige sexualisieren.",
+              "Grooming-Kommunikation oder -Verhalten gegenüber Minderjährigen.",
+              "Jeder Versuch unangemessenen Kontakts mit Minderjährigen über die Plattform.",
+              "Verbreitung, Weitergabe oder Anforderung von Material, das Minderjährige sexuell ausbeutet."
+            ],
+            "bodyAfter": "Jeder Nutzer, der gegen diese Richtlinie verstößt, wird dauerhaft gesperrt und der Fall wird den zuständigen Behörden gemeldet."
+          }
+        ]
+      },
+      {
+        "title": "2. Schutzmechanismen in der App",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "Meldesystem für Inhalte",
+            "body": "Alle Nutzer können unangemessene Beiträge oder Inhalte durch Tippen auf das 🚩 Symbol melden. Die Meldegründe umfassen ausdrücklich <strong>sexuelle Inhalte</strong>. Alle Meldungen werden von unserem Moderationsteam geprüft."
+          },
+          {
+            "type": "info",
+            "heading": "Benutzer blockieren",
+            "body": "Jeder Nutzer kann jederzeit einen anderen Nutzer von dessen Profil aus blockieren. Das Blockieren verhindert jede Interaktion zwischen den Parteien und macht sie füreinander unsichtbar."
+          },
+          {
+            "type": "info",
+            "heading": "Inhaltsmoderation",
+            "body": "Wir haben ein Moderationsteam, das eingehende Meldungen prüft und bei Inhalten, die gegen diese Richtlinie verstoßen, sofortige Maßnahmen ergreift, einschließlich Entfernung des Inhalts und Sperrung oder dauerhaftem Bann des verstoßenden Kontos."
+          }
+        ]
+      },
+      {
+        "title": "3. Rechtliche Compliance",
+        "cards": [
+          {
+            "type": "",
+            "heading": "Anwendbare Gesetzgebung",
+            "body": "Dev-licius hält alle anwendbaren Gesetze zum Schutz von Minderjährigen ein, einschließlich spanischer und europäischer Vorschriften sowie der Richtlinien der Vertriebsplattformen (Google Play und App Store). Wir arbeiten vollständig mit den zuständigen Behörden in jedem erkannten CSAE-Fall zusammen."
+          },
+          {
+            "type": "",
+            "heading": "Meldung an Behörden",
+            "body": "Wenn sexuelles Missbrauchsmaterial (CSAM) entdeckt wird, benachrichtigt Dev-licius sofort die zuständigen Behörden und ergreift alle notwendigen Maßnahmen, um solche Inhalte von der Plattform zu entfernen."
+          }
+        ]
+      },
+      {
+        "title": "4. Kindersicherheits-Ansprechpartner",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "Dedizierter Kindersicherheitskontakt",
+            "body": "Um Inhalte im Zusammenhang mit sexuellem Kindesmissbrauch oder -ausbeutung zu melden oder für Anfragen zu unseren Sicherheitspraktiken, kannst du dich direkt an unser Team wenden. Wir verpflichten uns, mit größter Dringlichkeit zu antworten und angemessene Maßnahmen zu ergreifen."
+          }
+        ]
+      }
+    ]
+  },
+  "zh": {
+    "headerSub": "儿童安全政策",
+    "title": "儿童安全政策",
+    "subtitle": "Dev-licius · Verdad o Reto",
+    "intro": "在由 <strong>Dev-licius</strong> 开发的 <strong>Verdad o Reto</strong> 中，未成年人的安全是我们的首要任务。本政策概述了我们对儿童保护的承诺以及我们为防止任何形式的虐待或剥削而采取的措施。",
+    "footer": "© 2026 Verdad o Reto · Jonatan Ortega González · 西班牙",
+    "contactText": "如有任何与儿童安全相关的事宜，请直接联系我们的团队：",
+    "sections": [
+      {
+        "title": "1. 明确禁止CSAE",
+        "cards": [
+          {
+            "type": "warning",
+            "heading": "完全禁止儿童性虐待和剥削",
+            "body": "<strong>Verdad o Reto</strong> 绝对禁止任何构成儿童性虐待和剥削（CSAE）的内容。这包括但不限于：",
+            "list": [
+              "任何形式的儿童性虐待材料（CSAM）。",
+              "将未成年人性化的内容。",
+              "针对未成年人的性诱导（grooming）通讯或行为。",
+              "任何通过平台与未成年人进行不当接触的企图。",
+              "传播、分发或索取性剥削未成年人的材料。"
+            ],
+            "bodyAfter": "任何违反本政策的用户将被永久封禁，其案例将被举报给相关当局。"
+          }
+        ]
+      },
+      {
+        "title": "2. 应用内保护机制",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "内容举报系统",
+            "body": "所有用户均可通过点击 🚩 图标举报任何不当帖子或内容。举报原因明确包含<strong>色情内容</strong>。所有举报均由我们的审核团队审查。"
+          },
+          {
+            "type": "info",
+            "heading": "屏蔽用户",
+            "body": "任何用户均可随时从其他用户的资料页面屏蔽对方。屏蔽后双方将无法进行任何互动，并在平台上互相不可见。"
+          },
+          {
+            "type": "info",
+            "heading": "内容审核",
+            "body": "我们拥有专门的审核团队，负责审查收到的举报，并对任何违反本政策的内容立即采取行动，包括删除内容以及暂停或永久封禁违规账户。"
+          }
+        ]
+      },
+      {
+        "title": "3. 法律合规",
+        "cards": [
+          {
+            "type": "",
+            "heading": "适用法律",
+            "body": "Dev-licius 遵守所有适用的未成年人保护法律，包括西班牙和欧洲法规，以及发行平台（Google Play 和 App Store）的政策。我们全力配合相关当局处理任何检测到的 CSAE 案例。"
+          },
+          {
+            "type": "",
+            "heading": "向当局举报",
+            "body": "一旦发现任何儿童性虐待材料（CSAM），Dev-licius 将立即通知相关当局，并采取一切必要措施将此类内容从平台上删除。"
+          }
+        ]
+      },
+      {
+        "title": "4. 儿童安全联络人",
+        "cards": [
+          {
+            "type": "info",
+            "heading": "专属儿童安全联系方式",
+            "body": "如需举报任何与儿童性虐待或剥削相关的内容，或就我们的安全实践进行咨询，您可以直接联系我们的团队。我们承诺以最高的紧迫性作出回应并采取适当行动。"
+          }
+        ]
+      }
+    ]
+  }
+};
+
+function buildCard(card, lang) {
+  let h = '<div class="card ' + (card.type || '') + '">';
+  if (card.badge) h += '<span class="badge ' + card.badge + '">' + card.badgeText + '</span>';
+  if (card.heading) h += '<h3>' + card.heading + '</h3>';
+  if (card.body) h += '<p>' + card.body + '</p>';
+  if (card.steps) card.steps.forEach(function(s, i) { h += '<p class="step"><span class="step-number">' + (i + 1) + '.</span> ' + s + '</p>'; });
+  if (card.list) h += '<ul>' + card.list.map(function(l) { return '<li>' + l + '</li>'; }).join('') + '</ul>';
+  if (card.bodyAfter) h += '<p>' + card.bodyAfter + '</p>';
+  return h + '</div>';
+}
+
+function render(lang) {
+  const t = translations[lang] || translations['es'];
+  document.getElementById('header-sub').textContent = t.headerSub;
+  document.title = t.headerSub + ' — Verdad o Reto';
+  document.getElementById('footer-text').textContent = t.footer;
+  let html = '<h1>' + t.title + '</h1><span class="subtitle">' + t.subtitle + '</span><p>' + t.intro + '</p>';
+  t.sections.forEach(function(section) {
+    html += '<h2>' + section.title + '</h2>';
+    section.cards.forEach(function(card) { html += buildCard(card, lang); });
+  });
+  html += '<div class="contact-box"><p>' + t.contactText + '</p><a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a></div>';
+  document.getElementById('content').innerHTML = html;
+}
+
+const params = new URLSearchParams(window.location.search);
+const lang = params.get('lang') || 'es';
+render(['es', 'en', 'de', 'zh'].includes(lang) ? lang : 'es');
+</script>
+</body>
+</html>
